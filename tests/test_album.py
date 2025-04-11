@@ -24,4 +24,16 @@ And have them be equal
 """
 def test_albums_are_equal():
     # your test code goes here! Remove the "pass" afterwards
-    pass
+    album1 = Album(1, "Title", 1991, 1)
+    album2 = Album(1, "Title", 1991, 1)
+    assert album1.__eq__(album2) == True
+
+def test_albums_are_not_equal():
+    # your test code goes here! Remove the "pass" afterwards
+    album1 = Album(1, "Title", 1991, 1)
+    album2 = Album(2, "Title", 1991, 1)
+    assert album1.__eq__(album2) == False
+
+def test_album_format_with_comma():
+    album1 = Album(1, "For Emma, Forever Ago", 1991, 1)
+    assert album1.__repr__() == "Album(1, For Emma, Forever Ago, 1991, 1)"
